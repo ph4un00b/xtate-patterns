@@ -59,7 +59,7 @@ const machine = createMachine<CTX>({
            * transition 1
            * if it is not taken for instance
            * due to a condition, then
-           * the next transition will be taken!
+           * the next transition 'end' will be taken!
            */
           {
             cond: (ctx) => ctx.tries < 5,
