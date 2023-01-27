@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <title>Vite + TS</title>
+    <style>
+        button[data-state='dragging dragging.normal'] {
+            opacity: 0.8;
+            color: blueviolet;
+            background-color: greenyellow;
+            box-shadow: 0 0 3rem whitesmoke;
+        }
+        button[data-state='dragging dragging.blue'] {
+            opacity: 0.8;
+            color: whitesmoke;
+            background-color: royalblue;
+            box-shadow: 0 0 3rem whitesmoke;
+        }
+
+        button[data-state='dragging dragging.lockedX'] {
+            opacity: 0.8;
+            color: blueviolet; 
+            background-color: plum;
+            box-shadow: 0 0 3rem whitesmoke;
+        }
+
+        button[data-state='idle'] {
+           /* transition: all 0.5s ease-in-out; */
+        }
+
+        button[data-state='end'] {
+          background-color: brown;
+          color: whitesmoke;
+          /* transition: all 0.5s ease-in-out; */
+        }
+
+        button[data-state='unauthorize'] {
+          background-color: royalblue;
+          color: whitesmoke;
+          /* transition: all 0.5s ease-in-out; */
+        }
+    </style>
+  </head>
+  <body style="position: relative; width: 100vw; height: 100%; overflow: hidden; touch-action:none;">
+    <div id="app">
+    <button style="position: relative;">element</button>
+    <!-- <button style="position: absolute;">element</button> -->
+    </div>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    <script type="module" src="/src/10-history.ts"></script>
+  </body>
+</html>
