@@ -7,8 +7,8 @@ import "./style.css";
  * EXIT => DO => ENTRY
  *
  * refactor:
- * in case of depending on actions
- * you should model it as state!
+ * in case of depending on too many actions
+ * you should probably model it as state!
  */
 import { createMachine, interpret } from "xstate";
 
