@@ -15,45 +15,45 @@ import { createMachine, interpret } from "xstate";
 const element = document.querySelector("button");
 
 const machine = createMachine({
-  /**
-   * @abstract predictableActionArguments
-   * default behavior on xstate 5!
-   */
-  predictableActionArguments: true,
-  initial: "idle",
-  states: {
-    idle: {
-      on: {
-        mousedown: {
-          target: "dragging",
-          /**
-           * more flexible in the array way
-           * instead of setting an inline function
-           */
-          actions: [setPoint],
-        },
-      },
-    },
-    dragging: {
-      on: {
-        mouseup: {
-          target: "idle",
-          //   actions: [setPoint],
-        },
-      },
-    },
-  },
+	/**
+	 * @abstract predictableActionArguments
+	 * default behavior on xstate 5!
+	 */
+	predictableActionArguments: true,
+	initial: "idle",
+	states: {
+		idle: {
+			on: {
+				mousedown: {
+					target: "dragging",
+					/**
+					 * more flexible in the array way
+					 * instead of setting an inline function
+					 */
+					actions: [setPoint],
+				},
+			},
+		},
+		dragging: {
+			on: {
+				mouseup: {
+					target: "idle",
+					//   actions: [setPoint],
+				},
+			},
+		},
+	},
 }, {
-  actions: {
-    overrideAction: () => {
-      console.log("good for integration testing!");
-    },
-  },
+	actions: {
+		overrideAction: () => {
+			console.log("good for integration testing!");
+		},
+	},
 });
 
 function setPoint(_ctx: unknown, evt: MouseEvent) {
-  if (!element) return;
-  element.dataset.point = `(${evt.clientX},${evt.clientY})`;
+	if (!element) return;
+	element.dataset.point = `(${evt.clientX},${evt.clientY})`;
 }
 
 const service = interpret(machine);
@@ -66,8 +66,8 @@ const service = interpret(machine);
  * https://en.wikipedia.org/wiki/Moore_machine
  */
 service.onTransition((state) => {
-  if (!element) return;
-  element.dataset.state = state.value as string;
+	if (!element) return;
+	element.dataset.state = state.value as string;
 });
 
 service.start();
