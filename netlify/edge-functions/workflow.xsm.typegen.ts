@@ -27,6 +27,6 @@ export interface Typegen0 {
     eventsCausingServices: {
 
     };
-    matchesStates: "initialState";
+    matchesStates: "ALTO" | "CONTINUAR" | "MEDIO";
     tags: never;
 }

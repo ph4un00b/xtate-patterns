@@ -10,6 +10,13 @@ indent_style = tab
 # you can adjust this during development
 indent_size = 2
 
+# xstate is a very special guy ¯\_( ͡° ͜ʖ ͡°)_/¯
+# this might be a bug on windows
+[*.xsm.ts]
+end_of_line = crlf
+indent_style = space
+indent_size = 2
+
 # yml is a very special guy ¯\_( ͡° ͜ʖ ͡°)_/¯
 [*.yml]
 indent_style = space
