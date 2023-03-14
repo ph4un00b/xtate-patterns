@@ -1,6 +1,6 @@
 import { createMachine } from 'https://cdn.skypack.dev/xstate';
 const jamonMachine = createMachine({
-  /** @xstate-layout N4IgpgJg5mDOIC5QEEAKAlA8gNWQYQElMA5AOjxIBUDiBVZdAYgFEA3MAOwBcACARgDaABgC6iUAAcA9rACWXWVI7iQAD0QAWAEwBWUgA4hATgDMGk0f0mA7EOs6dAGhABPRFqFbSWrfetGdK2sNfQ0AXzDnNCxcQhJSAFlmABEiFnZufmExJBBpOQUlFXUEbT1DU3NLGzsHZzcEfT5SEKMtIwA2EyEuk18IqIwcfCIyZAAZSkx0zl5BURV8+UVlXJK+Do7SPiFuvlajEI8tevdPb18df0CbEPCBkA4pCDgVaOG44kWZZaK1xAAtB1TgggaQhBCIRoHGZTAEtA93rFRqQJlNvgUVsVNCdXIg+IdSF19DohPotB19EYekJ7oMYiN4klUpgMb9VqASjCDNSAnwfPsNsC8QgCdZtiYSWSKVSaXSQEjGWQKMRqHQGGzChy1O4mtsjAaHCS+E1rHwQcdSNYPGYOkYNkZbDoOhEIkA */
+  /** @xstate-layout N4IgpgJg5mDOIC5QEEAKAlA8gNWQYQElMA5AOmQBkAVTAYgFEA3MAOwBcACARgG0AGALqJQABwD2sAJZtJYlsJAAPRFwBsq0lz4BmPlwAsADgCcxowCY+5gDQgAnokvnS58wHYArG+MfD2t0b6AL5BtmhYuIQkpACy9AAiRAzM7Nz8Qkgg4lIycgrKCPrmHqSGfMba+trGfm58nh62DgiGXKRGxubGqro92u4hYRg4+ERkeCRUBMQAqsjoyaycvIIK2dKy8pkFRSVlFVU1-vUejfaOVi7uXj61gSGhICxiEHAK4SNRxGsSG3nbiAAtKomkCNHwIRDzKoAh5utoPOZBiAPpExuRqJgfjlNvlEEVQQguGZSD1DB4+IZoSY+Ko+MFHqjRtE4oksZl1rktqACqdtKVjOUPFxXAY1CDzkTjG5NNpyZTqYK6QyhhFmeNJtM5uhsX9uUpHK1NKYfL5ha03FxCU5SG5LJVVMY1NK+B5VA8gkA */
   id: "APROVACION",
 
   tsTypes: {} as import("./workflow.xsm.typegen").Typegen0,
@@ -28,3 +28,7 @@ const jamonMachine = createMachine({
     }
   }
 });
+
+export default async function handler() {
+  return new Response("edge!")
+}
